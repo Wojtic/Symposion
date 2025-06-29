@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="V rámci Symposionu během tří dnů probíhají bloky různorodých přednášek, účast přislíbili přednášející všech možných zaměření a zájmů, teoretici i praktici. Vítáni jsou všichni a vstup je volný."
+    />
+    <meta
+      name="google-site-verification"
+      content="wtd3BfPI2yc-2orcXdt-Sce3xwM7VvRyj8md4FelC2o"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link href="vrchol_soubory/css2.css" rel="stylesheet" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="http://127.0.0.1:8080/img/icon.png"
+    />
+    <link rel="stylesheet" type="text/css" href="vrchol_soubory/main.css" />
+    <title>Vrchol - Symposion 2023 | Gymnázium Jana Keplera</title>
+  </head>
+  <body>
+    <header>
+      <div id="header_bg">
+        <canvas id="hbg_canvas" width="3776" height="284"></canvas>
+      </div>
+      <div class="header_fg">
+        <div class="title">
+          <h1 class="clickable" onclick="open_main_page()">VRCHOL</h1>
+          <h2>SYMPOSION <a href="https://gjk.cz/">GJK</a></h2>
+        </div>
+        <div class="content_links">
+          <h2 onclick="to_about_event()">O AKCI</h2>
+          <h2 onclick="to_harmonogram()">HARMONOGRAM</h2>
+          <h2 onclick="to_contacts()">KONTAKTY</h2>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section id="uvod">
+        <table>
+          <tbody>
+            <tr>
+              <th scope="col" style="font-size: 0">První část</th>
+              <th scope="col" style="font-size: 0">Vrchol</th>
+              <th scope="col" style="font-size: 0">Druhá část</th>
+            </tr>
+            <tr>
+              <td class="left">PROLOG</td>
+              <td class="center">VRCHOL</td>
+              <td class="right">EPILOG</td>
+            </tr>
+            <tr>
+              <td class="left">ROZMACH</td>
+              <td class="center">VRCHOL</td>
+              <td class="right">ÚPADEK</td>
+            </tr>
+            <tr>
+              <td class="left">EXPANZE</td>
+              <td class="center">VRCHOL</td>
+              <td class="right">KONTRAKCE</td>
+            </tr>
+            <tr>
+              <td class="left">BOOM</td>
+              <td class="center">VRCHOL</td>
+              <td class="right">RECESE</td>
+            </tr>
+            <tr>
+              <td class="left">ÚVOD</td>
+              <td class="center">VRCHOL</td>
+              <td class="right">ZÁVĚR</td>
+            </tr>
+            <tr>
+              <td class="left">VZRŮST</td>
+              <td class="center">VRCHOL</td>
+              <td class="right">POKLES</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="o_akci">
+        <h3>26. ročník Symposionu Gymnázia Jana Keplera</h3>
+        <p>
+          Zveme všechny příznivce vědění a poznání k podívané a poslechu, které
+          vyzývají k hledání paralel a provokují diskuzi. Toužíte-li po zasazení
+          informací do kontextu a po propojení známého s neznámým, navštivte
+          přednášky, které vám letos Symposion prostřednictvím svých skvělých
+          hostů nabídne. Jistě již netrpělivě čekají, až budou moci své myšlenky
+          a podněty sdílet i s Vámi, návštěvníky. Přednášku přislíbili
+          přednášející všech možných zaměření a zájmů, akademici i praktici.
+        </p>
+        <p>
+          Symposion se tradičně koná v listopadu při oslavách Dne studentstva
+          přímo u nás na gymnáziu. Vítáni jsou všichni a vstup je volný. Během
+          tří dnů probíhají bloky různorodých přednášek doprovázených například
+          koncertem studentských kapel, výstavami, promítáním filmů či tanečním
+          vystoupením. Ve škole, ze které se na tyto dny stává místo poznání,
+          potěšení a inspirativních setkání, nechybí ani kavárna, studentský
+          secondhand nebo dětský koutek.
+        </p>
+        <p>
+          Součástí Symposionu je také výstava digitálních koláží Miroslava
+          Huptycha
+          <span
+            class="clickable"
+            onclick="window.location='/img/labyrint_sveta_a_raj_srdce.png'"
+            ><b>LABYRINT SVĚTA A RÁJ SRDCE (1623—2023)</b></span
+          >, která aktualizuje myšlenkové dědictví Jana Amose Komenského ke 400.
+          výročí napsání knihy.
+        </p>
+        <p>
+          Každý rok Symposion GJK provází i
+          <span><b>koncert studentských kapel</b></span> a letos tomu není
+          jinak! Přijďte své hudebně nadané přátele podpořit do
+          <span><b>dejvické Klubovny</b></span
+          >, je naplánovaný vskutku nabitý večer! Zahrají kapely LoudOut, The
+          Quarantines, The Interlude a Terorchestr. Dostanete se tam snadno,
+          tramvají na Vozovnu Střešovice nebo metrem na Dejvickou a kousek
+          pěšky. Více informací na <span><b>@kasler_gjk</b></span> na Instagramu
+          nebo Facebookové stránce hudebního festivalu GJK — Kašleru :) Těšíme
+          se na vás!
+        </p>
+      </section>
+      <section id="harmonogram">
+        <h3 class="clickable" onclick="open_timetable()">Harmonogram</h3>
+        <div id="harmonogram_tables">
+          <span class="error_text">Nepodařilo se načíst harmonogram.</span>
+        </div>
+        <script
+          type="text/javascript"
+          src="vrchol_soubory/harmonogram.js"
+        ></script>
+        <div id="lecture_popup" style="display: none">
+          <div id="ov">
+            <div id="ov_bg"></div>
+            <div id="ov_container">
+              <div id="ov_lecturer"></div>
+              <div id="ov_title"></div>
+              <div id="ov_time"></div>
+              <div id="ov_room"></div>
+              <div id="ov_annotation"></div>
+              <br />
+              <div id="ov_lecturer_info"></div>
+              <br />
+              <div id="ov_last_update"></div>
+              <div id="ov_back" onclick="hide_lecture()">Zpět</div>
+            </div>
+          </div>
+          <div id="ov_overlay"></div>
+        </div>
+      </section>
+      <script>
+        gen_tables("0,1,2");
+      </script>
+      <section id="kontakty">
+        <h3>Kontakty</h3>
+        <div class="icons">
+          <a href="https://fb.me/SymposionGjk"
+            ><img
+              src="vrchol_soubory/fb.png"
+              height="100px"
+              alt="Facebook" /></a
+          ><a href="https://instagram.com/symposion_gjk"
+            ><img
+              src="vrchol_soubory/ig.png"
+              height="100px"
+              alt="Instagram" /></a
+          ><a href="mailto:symposion@gjk.cz"
+            ><img src="vrchol_soubory/mail.png" height="100px" alt="Email"
+          /></a>
+        </div>
+        <div class="contacts_wrapper">
+          <div>
+            <p>Jak se k nám přes hory a doly dostat?</p>
+            <p>
+              1) Pomocí svého oblíbeného mostu se dostaňte na levý břeh Vltavy.
+            </p>
+            <p>
+              2) Mílovými kroky překonejte vrstevnice petřínských svahů nebo
+              využijte hromadné dopravy do zastávek Pohořelec, Park Maxe van der
+              Stoela, Hládkov či Malovanka.
+            </p>
+            <p>
+              3) Neváhejte se k nám připojit na adrese Parléřova 2, 169 00,
+              Praha 6
+            </p>
+          </div>
+          <div class="address">
+            <iframe
+              title="Umístění GJK"
+              loading="lazy"
+              sandbox="allow-scripts"
+              width="425"
+              height="350"
+              src="vrchol_soubory/embed.html"
+              style="border: none"
+            ></iframe>
+            <!--<br/><small><a href="https://www.openstreetmap.org/?mlat=50.08787&amp;mlon=14.38729#map=19/50.08787/14.38729">Zobrazit větší mapu</a></small>-->
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer style="margin: 10px 30px">
+      <small
+        >Design<span class="emj" style=""> 🎨</span>: Ester Dolejšová<span
+          class="emj"
+          style=""
+        >
+          👧</span
+        ><br />Tvorba stránek<span class="emj" style=""> 📝</span>: Martin
+        Kudrna<span class="emj" style=""> 🧑</span>, Filip Majer<span
+          class="emj"
+          style=""
+        >
+          👱‍♂️</span
+        >, Vojtěch Černý<span class="emj" style=""> 🧑</span>, Lukáš
+        Salomon<span class="emj" style=""> 👨‍🦰</span></small
+      >
+    </footer>
+    <script type="text/javascript" src="vrchol_soubory/main.js"></script>
+    <script>
+      var urlbase = "/";
+    </script>
+  </body>
+</html>

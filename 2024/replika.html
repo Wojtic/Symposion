@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="V rámci Symposionu během tří dnů probíhají bloky různorodých přednášek, účast přislíbili přednášející všech možných zaměření a zájmů, teoretici i praktici. Vítáni jsou všichni a vstup je volný."
+    />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="icon" type="image/x-icon" href="./media/favicon.ico" />
+    <script src="csv.js"></script>
+    <script src="main.js" defer></script>
+    <title>Replika</title>
+  </head>
+  <body>
+    <div id="cover"></div>
+    <div id="scrollable">
+      <div class="scroll_page" id="scroll_page0"></div>
+      <div class="scroll_page" id="scroll_page1"></div>
+      <div class="scroll_page" id="scroll_page2"></div>
+      <div class="scroll_page" id="scroll_page3"></div>
+      <div class="scroll_page" id="sobota"></div>
+      <div class="scroll_page" id="patek"></div>
+      <div class="scroll_page" id="ctvrtek"></div>
+      <div class="scroll_page" id="about"></div>
+      <div class="scroll_page" id="intro"></div>
+      <div class="scroll_page" id="contacts"></div>
+      <div class="scroll_page" id="scroll_page7"></div>
+      <div class="scroll_page" id="scroll_page8"></div>
+      <div class="scroll_page" id="scroll_page9"></div>
+      <div class="scroll_page" id="scroll_page10"></div>
+      <div class="scroll_page" id="scroll_page11"></div>
+    </div>
+    <div class="pages">
+      <div id="frame_overlay0" style="scale: 0">
+        <div class="frame">
+          <div class="vertical">
+            <div class="top">
+              <div class="c_top_left"></div>
+              <div class="middle"></div>
+              <div class="c_top_right"></div>
+            </div>
+            <div class="horizontal">
+              <div class="left"></div>
+              <div class="content">
+                <div class="popup">
+                  <div class="top_row">
+                    <h1 id="presenting">Jméno prezentujícího se načítá</h1>
+                    <button
+                      type="button"
+                      id="close_annotation"
+                      onclick="{document.getElementById('frame_overlay0').style.scale = '0';}"
+                    >
+                      Zavřít
+                    </button>
+                  </div>
+                  <div class="info">
+                    <p id="room">Místnost</p>
+                    <p id="time">Čas</p>
+                  </div>
+                  <h1 id="presentation">Jméno prezentace se načítá</h1>
+                  <p id="annotation">Anotace se načítá</p>
+                  <p id="medailon">Medailonek se načítá</p>
+                </div>
+              </div>
+              <div class="right"></div>
+            </div>
+            <div class="bottom">
+              <div class="c_bottom_left"></div>
+              <div class="middle"></div>
+              <div class="c_bottom_right"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="frame_evening_overlay0" style="scale: 0">
+        <div class="frame">
+          <div class="vertical">
+            <div class="top">
+              <div class="c_top_left"></div>
+              <div class="middle"></div>
+              <div class="c_top_right"></div>
+            </div>
+            <div class="horizontal">
+              <div class="left"></div>
+              <div class="content">
+                <div class="popup">
+                  <div id="evening_ctvrtek">
+                    <div class="top_row">
+                      <h1 id="presenting">
+                        Promítání filmu Everything Everywhere All at Once
+                      </h1>
+                      <button
+                        type="button"
+                        id="close_annotation"
+                        onclick="{document.getElementById('frame_evening_overlay0').style.scale = '0';}"
+                      >
+                        Zavřít
+                      </button>
+                    </div>
+                    <div class="info">
+                      <p id="room">Sborovna</p>
+                      <p id="time">Čtvrtek 20:00</p>
+                    </div>
+                    <p id="annotation"></p>
+                    <!--<p id="medailon">Medailonek se načítá</p>-->
+                  </div>
+                  <div id="evening_patek">
+                    <div class="top_row">
+                      <h1 id="presenting">Divadelní představení Me too mýtů</h1>
+                      <button
+                        type="button"
+                        id="close_annotation"
+                        onclick="{document.getElementById('frame_evening_overlay0').style.scale = '0';}"
+                      >
+                        Zavřít
+                      </button>
+                    </div>
+                    <div class="info">
+                      <p id="room">Aula</p>
+                      <p id="time">Pátek 19:30</p>
+                    </div>
+                    <p id="annotation">
+                      Me too mýtů!, divadlo, které vyhrálo krajské kolo
+                      divadelnické souteže, probojovalo se na národní přehlídku
+                      a již rok oslňuje diváky. Soubor, rok starý, pod vedením
+                      Evy Neumannové stvořil satirickotragický divadelní celek o
+                      problematice feminismu a práv žen v starých řeckých bájích
+                      a pověstech. Chudinky, blbky i zrádkyně.
+                    </p>
+                    <!--<p id="medailon">Medailonek se načítá</p>-->
+                    <div class="top_row">
+                      <h1 id="presenting">
+                        Promítání filmu Baroko + přednáška
+                      </h1>
+                    </div>
+                    <div class="info">
+                      <p id="room">Sborovna</p>
+                      <p id="time">Pátek 20:00</p>
+                    </div>
+                    <p id="annotation">
+                      Jonáš je mladý muž z Prahy, který si nese neobvyklé
+                      tajemství: je barokosexuálem, tedy člověkem, kterého
+                      vzrušuje barokní umění. Krátký „mockumentární“ snímek
+                      poskytuje unikátní vhled do jeho nevšedního osobního
+                      života a seznamuje diváka s touto poněkud obskurní a zatím
+                      málo známou komunitou. Po projekci bude následovat bude
+                      debata o filmu. Kromě toho vám Tomáš s Davidem poví něco o
+                      tom, jak udělat film nebo v podstatě jakýkoliv projekt,
+                      Josef zase přihodí něco o baroku. Společně také představí
+                      svůj přístup k vlastní umělecké tvorbě – „film jako
+                      shitpost“ – a zavzpomínají, jak jejich kreativní začátky
+                      silně ovlivnilo právě studium na Gymnáziu Jana Keplera!
+                    </p>
+                    <p id="medailon">
+                      David Payne, Tomáš Navrátil a Josef Holeček spolu chodili
+                      do třídy na Gymnáziu Jana Keplera (maturitní ročník 2013).
+                      David s Tomášem pokračovali na FAMU, Josef na přemnoho
+                      vysokých škol. Společně točí ve volném čase filmy, kromě
+                      toho mají i zajímavé každodenní profese: David je
+                      cinematic designerem v herním studiu Warhorse, Tomáš je
+                      ředitelem odboru akcelerace startupů v agentuře
+                      CzechInvest, Josef je architektem a zároveň působí na
+                      Ústavu teorie a dějin architektury Fakulty architektury na
+                      Českém vysokém učení technickém a kurátoruje galerii
+                      Diptych v Nuslích.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="right"></div>
+            </div>
+            <div class="bottom">
+              <div class="c_bottom_left"></div>
+              <div class="middle"></div>
+              <div class="c_bottom_right"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page0">
+        <div class="frame">
+          <div class="vertical">
+            <div class="top">
+              <div class="c_top_left"></div>
+              <div class="middle"></div>
+              <div class="c_top_right"></div>
+            </div>
+            <div class="horizontal">
+              <div class="left"></div>
+              <div class="content">
+                <nav>
+                  <div class="logo">
+                    <a href="#intro">
+                      <img src="./media/logo.svg" alt="Logo" />
+                    </a>
+                  </div>
+                  <div class="links">
+                    <a id="about" href="#about">o akci</a>
+                    <a href="#ctvrtek">čtvrtek</a>
+                    <a href="#patek">pátek</a>
+                    <a href="#sobota">sobota</a>
+                    <a href="#contacts">kontakt</a>
+                  </div>
+                </nav>
+                <div class="column">
+                  <h3
+                    class="bouncing"
+                    style="
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      transition: all 50ms;
+                    "
+                  >
+                    replika jako snaha o odpověď
+                  </h3>
+                  <h3
+                    class="bouncing"
+                    style="
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      transition: all 50ms;
+                    "
+                  >
+                    replika jako obhajoba či vyvrácení tvrzení
+                  </h3>
+                  <h3
+                    class="bouncing"
+                    style="
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      transition: all 50ms;
+                    "
+                  >
+                    replika jako potřeba zopakovat
+                  </h3>
+                  <h3
+                    class="bouncing"
+                    style="
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      transition: all 50ms;
+                    "
+                  >
+                    replika jako snaha vyrovnat se originálu
+                  </h3>
+                  <h3
+                    class="bouncing"
+                    style="
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      transition: all 50ms;
+                    "
+                  >
+                    replika jako rehabilitace (minulosti)
+                  </h3>
+                  <h3
+                    class="bouncing"
+                    style="
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      transition: all 50ms;
+                    "
+                  >
+                    replika jako odkaz (budoucnosti)
+                  </h3>
+                </div>
+              </div>
+              <div class="right"></div>
+            </div>
+            <div class="bottom">
+              <div class="c_bottom_left"></div>
+              <div class="middle"></div>
+              <div class="c_bottom_right"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page1">
+        <div class="frame">
+          <div class="vertical">
+            <div class="top">
+              <div class="c_top_left"></div>
+              <div class="middle"></div>
+              <div class="c_top_right"></div>
+            </div>
+            <div class="horizontal">
+              <div class="left"></div>
+              <div class="content">
+                <nav></nav>
+                <div class="column">
+                  <h1>27. ročník Symposionu Gymnázia Jana Keplera</h1>
+                  <p>
+                    Zveme všechny příznivce vědění a poznání k podívané a
+                    poslechu, které vyzývají k hledání paralel a provokují
+                    diskuzi. Toužíte-li po zasazení informací do kontextu a po
+                    propojení známého s neznámým, navštivte přednášky, které vám
+                    letos Symposion prostřednictvím svých skvělých hostů
+                    nabídne. Jistě již netrpělivě čekají, až budou moci své
+                    myšlenky a podněty sdílet i s Vámi, návštěvníky. Přednášku
+                    přislíbili přednášející všech možných zaměření a zájmů,
+                    akademici i praktici.
+                  </p>
+                  <p>
+                    Symposion se tradičně koná v listopadu při oslavách Dne
+                    studentstva přímo u nás na gymnáziu. Vítáni jsou všichni a
+                    vstup je volný. Během tří dnů probíhají bloky různorodých
+                    přednášek doprovázených například koncertem studentských
+                    kapel, výstavami, promítáním filmů či divadelním
+                    vystoupením. Ve škole, ze které se na tyto dny stává místo
+                    poznání, potěšení a inspirativních setkání, nechybí ani
+                    volně přístupná jídelna a kavárna.
+                  </p>
+                </div>
+              </div>
+              <div class="right"></div>
+            </div>
+            <div class="bottom">
+              <div class="c_bottom_left"></div>
+              <div class="middle"></div>
+              <div class="c_bottom_right"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page2">
+        <div class="frame">
+          <div class="vertical">
+            <div class="top">
+              <div class="c_top_left"></div>
+              <div class="middle"></div>
+              <div class="c_top_right"></div>
+            </div>
+            <div class="horizontal">
+              <div class="left"></div>
+              <div class="content">
+                <nav></nav>
+                <div class="column harmonogram">
+                  <h1>Čtvrtek 14.11.</h1>
+                  <div class="table_boundry">
+                    <table id="table_0">
+                      <tr>
+                        <th></th>
+                        <th>Aula</th>
+                        <th style="font-size: 0.9rem">Sborovna</th>
+                        <th>USV</th>
+                        <th>P1.1</th>
+                        <th>P2.2</th>
+                        <th>P2.3</th>
+                      </tr>
+                      <tr>
+                        <th>9:00</th>
+                      </tr>
+                      <tr>
+                        <th>11:00</th>
+                      </tr>
+                      <tr
+                        style="
+                          border-bottom: #fafafa 2px solid;
+                          border-top: #fafafa 2px solid;
+                        "
+                      >
+                        <th>13:00</th>
+                        <td colspan="6">
+                          <p class="presenter">Oběd</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>14:00</th>
+                      </tr>
+                      <tr>
+                        <th>16:00</th>
+                      </tr>
+                      <tr style="border-top: #fafafa 2px solid">
+                        <th>20:00</th>
+                        <td colspan="6" onclick="evening_popup(0)">
+                          <p class="presenter">Večerní program</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="right"></div>
+            </div>
+            <div class="bottom">
+              <div class="c_bottom_left"></div>
+              <div class="middle"></div>
+              <div class="c_bottom_right"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page3">
+        <div class="frame">
+          <div class="vertical">
+            <div class="top">
+              <div class="c_top_left"></div>
+              <div class="middle"></div>
+              <div class="c_top_right"></div>
+            </div>
+            <div class="horizontal">
+              <div class="left"></div>
+              <div class="content">
+                <nav></nav>
+                <div class="column harmonogram">
+                  <h1>Pátek 15.11.</h1>
+                  <div class="table_boundry">
+                    <table id="table_1">
+                      <tr>
+                        <th></th>
+                        <th>Aula</th>
+                        <th style="font-size: 0.9rem">Sborovna</th>
+                        <th>USV</th>
+                        <th>P1.1</th>
+                        <th>P2.2</th>
+                        <th>P2.3</th>
+                      </tr>
+                      <tr>
+                        <th>9:00</th>
+                      </tr>
+                      <tr>
+                        <th>11:00</th>
+                      </tr>
+                      <tr
+                        style="
+                          border-bottom: #fafafa 2px solid;
+                          border-top: #fafafa 2px solid;
+                        "
+                      >
+                        <th>13:00</th>
+                        <td colspan="6">
+                          <p class="presenter">Oběd</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>14:00</th>
+                      </tr>
+                      <tr>
+                        <th>16:00</th>
+                      </tr>
+                      <tr>
+                        <th>18:00</th>
+                      </tr>
+                      <tr style="border-top: #fafafa 2px solid">
+                        <th>19:30</th>
+                        <td colspan="6" onclick="evening_popup(1)">
+                          <p class="presenter">Večerní program</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="right"></div>
+            </div>
+            <div class="bottom">
+              <div class="c_bottom_left"></div>
+              <div class="middle"></div>
+              <div class="c_bottom_right"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page4">
+        <div class="frame">
+          <div class="vertical">
+            <div class="top">
+              <div class="c_top_left"></div>
+              <div class="middle"></div>
+              <div class="c_top_right"></div>
+            </div>
+            <div class="horizontal">
+              <div class="left"></div>
+              <div class="content">
+                <nav></nav>
+                <div class="column harmonogram">
+                  <h1>Sobota 16.11.</h1>
+                  <div class="table_boundry">
+                    <table id="table_2">
+                      <tr>
+                        <th></th>
+                        <th style="font-size: 0.9rem">Sborovna</th>
+                        <th>USV</th>
+                        <th>P2.2</th>
+                        <th>P2.3</th>
+                      </tr>
+                      <tr>
+                        <th>9:00</th>
+                      </tr>
+                      <tr>
+                        <th>11:00</th>
+                      </tr>
+                      <tr>
+                        <th>13:00</th>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="right"></div>
+            </div>
+            <div class="bottom">
+              <div class="c_bottom_left"></div>
+              <div class="middle"></div>
+              <div class="c_bottom_right"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page5">
+        <div class="frame">
+          <div class="vertical">
+            <div class="top">
+              <div class="c_top_left"></div>
+              <div class="middle"></div>
+              <div class="c_top_right"></div>
+            </div>
+            <div class="horizontal">
+              <div class="left"></div>
+              <div class="content">
+                <nav></nav>
+                <div class="contacts_column">
+                  <h1>Kontakty</h1>
+                  <div class="contacts_row">
+                    <div class="contacts_p">
+                      <p>Jak se k nám přes hory a doly dostat?</p>
+                      <p>
+                        1) Pomocí svého oblíbeného mostu se dostaňte na levý
+                        břeh Vltavy.
+                      </p>
+                      <p>
+                        2) Mílovými kroky překonejte vrstevnice petřínských
+                        svahů nebo využijte hromadné dopravy do zastávek
+                        Pohořelec, Park Maxe van der Stoela, Hládkov či
+                        Malovanka.
+                      </p>
+                      <p>
+                        3) Neváhejte se k nám připojit na adrese Parléřova 2,
+                        169 00, Praha 6
+                      </p>
+                    </div>
+                    <iframe
+                      src="https://www.openstreetmap.org/export/embed.html?bbox=14.383107125759125%2C50.086795202407714%2C14.391553401947023%2C50.08897390871892&amp;layer=mapnik&amp;marker=50.087884567943426%2C14.387330263853073"
+                      style="border: 1px solid black"
+                    ></iframe>
+                  </div>
+                  <footer>
+                    <p>
+                      Design: Naďa Friedrichová Web: Vojtěch Černý, Lukáš
+                      Salomon, Filip Majer
+                    </p>
+                  </footer>
+                </div>
+              </div>
+              <div class="right"></div>
+            </div>
+            <div class="bottom">
+              <div class="c_bottom_left"></div>
+              <div class="middle"></div>
+              <div class="c_bottom_right"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

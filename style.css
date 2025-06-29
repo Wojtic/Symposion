@@ -1,0 +1,326 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+html {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    height: 100vh;
+    /*scroll-snap-type: y proximity;*/
+    overflow-x: hidden;
+    overflow-y: scroll;
+    transform-style: preserve-3d;
+    perspective: 1px;
+}
+
+header {
+    height: 20rem;
+    padding: 1rem 5rem;
+    background-color: #304070;
+    transform-style: preserve-3d;
+    position: relative;
+    z-index: 1000;
+    box-shadow: 0px 30px 30px rgb(53, 53, 53);
+    background-repeat: no-repeat;
+    background-image: url("./hlavicka.png");
+    background-size: 30%;
+    background-position: 90% 4rem;
+    scroll-snap-align: start;
+}
+
+header h1 {
+    line-height: 7rem;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    font-size: 5rem;
+}
+
+header p {
+    line-height: 2rem;
+    font-size: 1.3rem;
+}
+
+.rocnik {
+    height: 25rem;
+    padding: 3rem;
+    display: flex;
+    scroll-snap-align: start;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.rocnik,
+.rocnik::before {
+    background-size: cover;
+    background-position: center center;
+}
+
+.web {
+    display: block;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.ikonky {
+    display: flex;
+    flex-direction: row;
+    width: 80vw;
+    border: 2px white solid;
+}
+
+.galerie {
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-left: 2px white solid;
+}
+
+.web h2 {
+    line-height: 10rem;
+    font-size: 4rem;
+}
+
+.i_camera {
+    height: 4rem;
+}
+
+.i_website {
+    height: 4rem;
+    padding: 0 1rem;
+}
+
+.predni {
+    z-index: 1000;
+    box-shadow: 0px 30px 30px rgb(53, 53, 53),
+        0px -30px 30px rgb(53, 53, 53);
+}
+
+.rocnik:nth-child(even)::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: translateZ(-0.5px) scale(2.2);
+    transform-style: preserve-3d;
+    z-index: 0;
+    filter: blur(2px) brightness(0.9);
+}
+
+
+@media screen and (max-width: 1200px) {
+    .web h2 {
+        line-height: 7.5rem;
+        font-size: 3rem;
+    }
+
+    .i_camera {
+        height: 3rem;
+    }
+
+    .galerie {
+        width: 7.5rem;
+        height: 7.5rem;
+    }
+
+    .i_website {
+        height: 3rem;
+        padding: 0 0.75rem;
+    }
+
+    header h1 {
+        line-height: 5rem;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+        font-size: 5rem;
+    }
+
+    header p {
+        line-height: 1.7rem;
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .rocnik {
+        height: 20rem;
+        padding: 2rem;
+    }
+
+    .web h2 {
+        line-height: 6rem;
+        font-size: 2.5rem;
+    }
+
+    .i_camera {
+        height: 2.5rem;
+    }
+
+    .galerie {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .i_website {
+        height: 2.5rem;
+        padding: 0 0.75rem;
+    }
+
+    header {
+        padding: 1.5rem;
+        height: 15rem;
+    }
+
+    header h1 {
+        line-height: 3.5rem;
+        padding-top: 1.5rem;
+        padding-bottom: 1rem;
+        font-size: 3rem;
+    }
+
+    header p {
+        line-height: 1.7rem;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .ikonky {
+        width: 90vw;
+    }
+
+    .rocnik {
+        height: 18rem;
+    }
+
+    .web {
+        padding: unset 1rem;
+    }
+
+    .web h2 {
+        line-height: 5rem;
+        font-size: 2rem;
+    }
+
+    .i_camera {
+        height: 2.2rem;
+    }
+
+    .galerie {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .i_website {
+        height: 2.2rem;
+        padding: 0 0.0rem;
+    }
+
+    header {
+        padding: 1.5rem;
+        height: 15rem;
+    }
+
+    header h1 {
+        line-height: 2.5rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        font-size: 2rem;
+    }
+
+    header p {
+        line-height: 1.2rem;
+        font-size: 1rem;
+    }
+
+    .rocnik:nth-child(even)::before {
+        transform: translateZ(-0.3px) scale(2.2);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .ikonky {
+        width: 90vw;
+    }
+
+    .rocnik {
+        height: 14rem;
+    }
+
+    .web {
+        padding-left: 0.3rem;
+        padding-right: 0.3rem;
+    }
+
+    .web h2 {
+        line-height: 4rem;
+        font-size: 1.7rem;
+    }
+
+    .i_camera {
+        height: 1.4rem;
+    }
+
+    .galerie {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .i_website {
+        height: 2rem;
+        padding: 0 0.0rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .ikonky {
+        width: 90vw;
+    }
+
+    .rocnik {
+        height: 14rem;
+    }
+
+    .web {
+        padding-left: 0.3rem;
+        padding-right: 0.3rem;
+    }
+
+    .web h2 {
+        line-height: 4rem;
+        font-size: 1.3rem;
+    }
+
+    .i_camera {
+        height: 1.4rem;
+    }
+
+    .galerie {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .i_website {
+        height: 2rem;
+        padding: 0 0.0rem;
+    }
+}

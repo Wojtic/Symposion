@@ -1,0 +1,75 @@
+#replika::before {
+    background: url("./2024/pozadi.png") center center;
+}
+
+#vrchol {
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./2023/plakat.jpg") center center;
+    z-index: 1000;
+}
+
+#mosty::before {
+    background-image: url("./2022/pozadi.jpg");
+}
+
+#nerad {
+    background-image: url("./2021/pozadi.png");
+}
+
+#pouto::before {
+    background-image: url("./2019/pozadi.jpg");
+}
+
+#divocina {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./2018/pozadi.jpg") center center;
+}
+
+#telo::before {
+    background-image: url("./2017/pozadi.jpg");
+}
+
+#nemoc {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("./2016/pozadi.png") top center;
+    background-size: cover;
+}
+
+#vlny::before {
+    background-image: url("./2015/pozadi.jpg");
+}
+
+#plevel {
+    background-image: url("./2014/pozadi.jpg");
+}
+
+#proti_srsti::before {
+    background-image: url("./2013/pozadi.jpg");
+    background-position: top center;
+}
+
+#generace {
+    background-image: url("./2012/pozadi.jpg");
+}
+
+#nebe::before {
+    background-image: url("./2011/pozadi.png");
+}
+
+#stopy {
+    background-image: url("./2010/pozadi.png");
+}
+
+#vize::before {
+    background-image: url("./2009/pozadi.png");
+}
+
+#muz_zena {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("./2008/pozadi.png") center center;
+    background-size: cover;
+}
+
+#hranice::before {
+    background-image: url("./2007/pozadi.png");
+}

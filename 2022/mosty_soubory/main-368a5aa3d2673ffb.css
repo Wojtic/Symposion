@@ -1,0 +1,889 @@
+.data_from {
+  display: none;
+  opacity: 0.5;
+}
+
+* {
+  font-family: Arial;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@font-face {
+  font-family: "ArialBlackS";
+  src: url("Arial-Black_S.ttf");
+}
+
+.most {
+  font-family: "ArialBlackS";
+}
+
+@font-face {
+  font-family: "ArialBlack";
+  src: url("ariblk.ttf");
+}
+
+.most_bez_s {
+  font-family: "ArialBlack";
+}
+
+header {
+  min-height: 5rem;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.opakujici_most {
+  background-image: url("oblouky.png");
+  background-repeat: repeat-x;
+  height: 23px;
+}
+
+.opakujici_most_naopak {
+  background-image: url("oblouky_naopak.png");
+  background-repeat: repeat-x;
+  height: 23px;
+}
+
+main {
+  flex-grow: 1;
+  background-color: #828696;
+  position: relative;
+  padding-bottom: 23px;
+}
+
+@keyframes posun_most {
+  100% {
+    background-position: 362px;
+  }
+}
+
+main .opakujici_most:first-child {
+  width: 100%;
+  animation: posun_most 30s linear infinite;
+}
+
+main .opakujici_most_naopak {
+  width: 100%;
+  animation: posun_most 30s linear infinite;
+  animation-direction: reverse;
+  position: absolute;
+  bottom: 0;
+}
+
+@media only screen and (max-width: 529px) {
+
+  main .opakujici_most:first-child,
+  main .opakujici_most_naopak {
+    background-size: 260px 16px !important;
+    height: 16px !important;
+  }
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  flex-basis: 3rem;
+  flex-shrink: 0;
+  height: fit-content;
+  /* opacity: 0.7; */
+}
+
+footer h6 {
+  padding: 0px 10px;
+}
+
+footer img {
+  transform: translateY(2px);
+}
+
+/* ---------------------------------------- generic header */
+
+@media only screen and (max-width: 599px) {
+  header {
+    min-height: 5.5rem;
+  }
+
+  .generic_header h1 {
+    margin-top: 3rem !important;
+    margin-left: 0.5rem !important;
+  }
+
+  .generic_header .hlavicka_most_nad {
+    height: 2.5rem !important;
+    margin-top: 3rem !important;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  header {
+    min-height: 6.5rem;
+  }
+
+  .generic_header h1 {
+    font-size: 3rem !important;
+    line-height: 3rem !important;
+  }
+}
+
+@media only screen and (min-width: 850px) {
+  header {
+    min-height: 8rem;
+  }
+}
+
+.generic_header h1 {
+  display: block;
+  width: auto;
+  flex-shrink: 0;
+  line-height: 2.5rem;
+  margin-left: 3rem;
+  margin-top: 3rem;
+  font-size: 2.5rem;
+  padding-right: 1rem;
+}
+
+.generic_header .hlavicka_most_nad {
+  height: 2.5rem;
+  margin-top: 3.5rem;
+}
+
+.generic_header .hlavicka_most_nad .opakujici_most {
+  height: 12px !important;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 350px) {
+  .generic_header h1 {
+    margin-left: 0.5rem !important;
+    margin-top: 0.3rem !important;
+  }
+
+  .generic_header .hlavicka_most_nad {
+    position: absolute;
+    left: 0.5rem;
+  }
+}
+
+/* --------------------------------------- overlay */
+
+@media only screen and (min-width: 850px) {
+  .overlay-body * {
+    font-size: larger;
+  }
+}
+
+.overlay-body {
+  display: none;
+  width: 90vw;
+  height: 90vh;
+  z-index: 999;
+  position: fixed;
+  top: 5vh;
+  left: calc(5vw - 2rem);
+  overflow-y: scroll;
+  overscroll-behavior: contain;
+  background: rgb(113, 110, 126);
+  padding: 0 2rem;
+}
+
+.overlay-lecturer {
+  width: fit-content;
+  font-size: 2rem;
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.overlay-lecture {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.overlay-background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 998;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.overlay-rooms,
+.overlay-lecturer-info,
+.overlay-annotation {
+  margin-bottom: 0.5rem;
+}
+
+.overlay-back {
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+
+@media only screen and (min-width: 550px) {
+  .overlay-back {
+    font-size: 2rem;
+    margin: 1rem 1vw;
+    padding: 0.7rem 0.7vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .overlay-back {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    width: fit-content;
+    margin: 1rem auto;
+    text-align: center;
+  }
+
+  .overlay-body {
+    width: 80vw;
+    left: calc(10vw - 2rem);
+  }
+
+  .overlay-lecturer {
+    font-size: 1.5rem;
+  }
+
+  .overlay-lecture {
+    font-size: 1.2rem;
+  }
+}
+
+/* ---------------------------------------------- homepage */
+
+.mosty_jako {
+  max-width: 95vw;
+  display: flex;
+  align-items: center;
+  font-size: xx-large;
+  line-height: 5rem;
+  padding: 3rem;
+  width: fit-content;
+  margin: 0 auto;
+  background-image: url("obrazek_mostu.png");
+  background-position: center;
+  background-size: cover;
+}
+
+@media only screen and (max-height: 780px) {
+  .mosty_jako {
+    line-height: 9vh;
+  }
+}
+
+@media only screen and (max-height: 700px) {
+  .mosty_jako {
+    line-height: 8vh;
+  }
+}
+
+@media only screen and (max-width: 890px) {
+  .mosty_jako {
+    font-size: 3.5vw;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .mosty_jako {
+    padding: 1.5rem;
+  }
+}
+
+
+/* ---------------------------------- harmonogram */
+.harmonogram_disclaimer {
+  width: fit-content;
+  text-align: center;
+  margin: 1rem auto 0 auto;
+  line-height: 1.5rem;
+}
+
+.harmonogram_header h1 {
+  display: block;
+  width: auto;
+  height: 2rem;
+  flex-shrink: 0;
+  line-height: 2rem;
+  margin-left: 1rem;
+  margin-top: 3rem;
+  font-size: 2.5rem;
+  padding-right: 1rem;
+}
+
+.hlavicka_most_nad {
+  height: 2.5rem;
+  margin-top: 3rem;
+  font-size: smaller;
+}
+
+.hlavicka_most_nad .opakujici_most {
+  height: 12px !important;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 360px) {
+  .harmonogram_header h1 {
+    width: 1rem;
+    font-size: 1.5rem !important;
+  }
+
+  .day {
+    left: 8.5rem !important;
+  }
+
+  .harmonogram_header .hlavicka_most_nad {
+    margin-left: 6rem;
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+  }
+
+  .harmonogram_header .hlavicka_most_nad .opakujici_most {
+    background-size: 10rem;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+
+  /* strašný zlý nepěkná věc, přepsat! (ale asi bude třeba hrábnout do html) */
+  .harmonogram_header {
+    position: relative;
+  }
+
+  .harmonogram_header h1 {
+    margin-left: 0.5rem;
+    font-size: 2.2rem;
+  }
+
+  .day {
+    display: block;
+    width: auto;
+    position: absolute;
+    left: 12.3rem;
+    top: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .day {
+    display: block;
+    width: auto;
+    font-size: 2.5rem;
+    line-height: 2rem;
+    margin-top: 3rem;
+    margin-left: 1rem;
+  }
+}
+
+@media only screen and (min-width: 850px) {
+  .harmonogram_header h1 {
+    height: 4rem;
+    line-height: 3rem;
+    margin-left: 3rem;
+    margin-top: 3rem;
+    font-size: 3rem;
+    padding-right: 1rem;
+  }
+
+  .harmonogram_header .hlavicka_most_nad {
+    height: 2.5rem;
+    margin-top: 3.5rem;
+  }
+
+  .day {
+    font-size: 3rem;
+    margin-top: 3rem;
+    margin-left: 8rem;
+  }
+}
+
+/* ------------------------------------------ domovská stránka */
+@media only screen and (max-width: 550px) {
+  nav a {
+    font-size: 3.8vw !important;
+    padding: 0 3vw !important;
+  }
+}
+
+@media only screen and (max-width: 770px) and (min-width: 550px) {
+  nav a {
+    font-size: 1.3rem !important;
+    padding: 0 1.3rem !important;
+  }
+}
+
+nav {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 3rem;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  color: inherit;
+  display: block;
+  height: 100%;
+  padding: 0 3rem;
+}
+
+nav b {
+  display: block;
+  height: 100%;
+  text-align: center;
+}
+
+.first_line {
+  display: flex;
+  flex-direction: row;
+}
+
+.first_line .opakujici_most {
+  flex-grow: 1;
+}
+
+.date .opakujici_most {
+  width: 100%;
+}
+
+@media only screen and (min-width: 860px) {
+  .title {
+    margin-left: 3rem !important;
+  }
+}
+
+@media only screen and (min-width: 850px) {
+  .title {
+    margin-top: 2rem !important;
+    margin-left: 2rem;
+  }
+
+  .uvod_header h1 {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    padding-right: 1rem;
+  }
+
+  .date {
+    margin: 2.5rem 0 0 3rem !important;
+  }
+}
+
+@media only screen and (min-width: 545px) {
+  .title {
+    margin: 1rem 0 0 1rem;
+  }
+
+  .uvod_header h1 {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+    padding-right: 0.8rem;
+  }
+
+  .first_line .opakujici_most {
+    margin-top: 0.3rem;
+    background-size: 208px;
+  }
+
+  .uvod_header p {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+  }
+
+  .date {
+    margin: 1rem 0 0 1rem;
+  }
+
+  .date p {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+
+  .date .opakujici_most {
+    margin-top: 0.3rem;
+    background-size: 208px;
+  }
+}
+
+@media only screen and (max-width: 545px) {
+  .uvod_header {
+    position: relative;
+  }
+
+  .first_line {
+    flex-direction: column;
+  }
+
+  .title {
+    margin: 1rem 0 0 0.3rem;
+  }
+
+  .first_line .opakujici_most {
+    width: 95vw;
+    height: 1rem;
+    background-size: 13rem;
+  }
+
+  .uvod_header h1 {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  .title p {
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+    width: 95vw;
+  }
+
+  .date p {
+    position: absolute;
+    top: 1.7rem;
+    right: calc(5vw - 0.3rem);
+  }
+
+  .date .opakujici_most {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 374px) {
+  .uvod_header h1 {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+
+  .date p {
+    position: absolute;
+    text-align: right;
+    top: 0.2rem;
+    right: calc(5vw - 0.3rem);
+    max-width: 50vw;
+    line-height: 1rem;
+  }
+}
+
+/* ---------------------------------------- harmonogram tabulka */
+.harmonogram_day {
+  border-spacing: 0;
+  margin: 0 auto;
+  border-collapse: collapse;
+  max-width: 95vw;
+}
+
+.harmonogram_day * {
+  min-width: fit-content !important;
+}
+
+.harmonogram_day_title {
+  width: fit-content;
+  margin: 1rem auto 0 auto;
+}
+
+.harmonogram_day_title p {
+  font-size: 3rem;
+  line-height: 3rem;
+}
+
+.harmonogram_day_title .opakujici_most {
+  background-size: 13rem;
+}
+
+@media only screen and (max-width: 999px) {
+  .mobile_hidden {
+    display: none;
+  }
+
+  .harmonogram_day {
+    width: 90%;
+    max-width: 40rem;
+  }
+
+  .harmonogram_day td {
+    border: 5px solid black;
+    width: 100%;
+    padding: 0.5rem 0;
+    height: fit-content;
+  }
+
+  .harmonogram_day,
+  .harmonogram_day tr {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .harmonogram_day tr:first-child,
+  .harmonogram_day tr:last-child {
+    display: none;
+  }
+
+  .harmonogram_day td:first-child {
+    /* Nefunguje na to border-colapse */
+    border: 5px solid transparent;
+    border-bottom: 5px solid black;
+    transform: translateY(5px);
+    height: 3rem;
+  }
+
+  /* taky kvuli border-colapse */
+  .harmonogram_day td:not(:nth-child(2)) {
+    border-top: none;
+  }
+
+  .harmonogram_day td:first-child .nazev_prednasky {
+    font-family: "ArialBlackS";
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    height: 2rem;
+    text-align: center;
+  }
+
+  .harmonogram_day td:empty {
+    display: none;
+  }
+
+  .harmonogram_day td b,
+  .harmonogram_day td:not(first-child) .nazev_prednasky:not(.mobile_hidden) {
+    display: block;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0.1rem 0.5rem;
+  }
+
+  .for_younger {
+    text-align: center;
+    margin-top: 0.3rem;
+    font-size: 1.5rem;
+    line-height: 0.5rem;
+  }
+
+  .lecture_room {
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 999px) {
+  .harmonogram_day td {
+    border: 5px solid black;
+    height: 6rem;
+    min-height: fit-content;
+  }
+
+  .for_younger {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .lecture_room {
+    display: none;
+  }
+
+  .harmonogram_day td b,
+  .harmonogram_day td:not(first-child) .nazev_prednasky {
+    display: block;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+  }
+
+  .harmonogram_day td b {
+    font-size: 1.2rem;
+  }
+
+  .harmonogram_day td:first-child,
+  .harmonogram_day td:first-child .nazev_prednasky {
+    border: none;
+    width: 7rem !important;
+    text-align: right;
+    padding-right: 0.5rem;
+    font-size: 1rem;
+    font-family: "ArialBlackS";
+    white-space: nowrap;
+    transform: translateY(-1.5rem);
+  }
+
+  .harmonogram_day tr:first-child td,
+  .harmonogram_day tr:first-child td .nazev_prednasky {
+    border: none;
+    font-family: "ArialBlackS";
+    font-size: 1.5rem;
+    height: 2rem;
+    text-align: center;
+  }
+}
+
+td.clickable {
+  cursor: pointer;
+}
+
+td a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+
+/* ---------------------------------------------------- informace */
+.main-about {
+  min-height: 60vh;
+}
+
+.about_wrapper {
+  margin: 2rem 0 0 5rem;
+  width: 80vw;
+}
+
+.about_wrapper h1 {
+  padding-bottom: 1rem;
+}
+
+.about_wrapper p {
+  font-size: large;
+  padding-bottom: 1rem;
+  text-align: justify;
+}
+
+@media only screen and (max-width: 800px) {
+  .about_wrapper {
+    margin: 1vw 0 0 7vw;
+    width: 86vw;
+    text-align: justify;
+  }
+
+  .about_wrapper h1 {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .about_wrapper p {
+    font-size: 1rem;
+  }
+}
+
+
+/* ---------------------------------------------------- kontakty */
+.main-contacts {
+  min-height: 70vh;
+}
+
+
+.address {
+  width: 60%;
+  position: absolute;
+  right: 0;
+  top: 5rem;
+}
+
+.address iframe {
+  width: 50vw;
+  height: 20rem;
+  margin: 0rem 2rem 0 2rem;
+  border: 3px solid black;
+}
+
+.address_mobile {
+  display: none;
+}
+
+.school_wrapper {
+  width: 50vw;
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.icons {
+  width: 30vw;
+  max-width: 260px;
+  margin: 2rem 0 0 10vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.contacts_wrapper {
+  width: 30vw;
+  margin: 4rem 0 0 3rem;
+}
+
+.contacts_wrapper p {
+  padding-bottom: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .address_mobile {
+    display: initial !important;
+  }
+
+  .address_pc {
+    display: none;
+  }
+
+  .address {
+    width: 95%;
+    position: initial;
+    margin: 0 auto;
+  }
+
+  .address iframe {
+    width: 90vw;
+    margin: 2.5rem 2.5vw 0 2.5vw;
+  }
+
+  .school_wrapper {
+    width: 90vw;
+    margin-left: 2.5vw;
+  }
+
+  .icons {
+    width: 70vw;
+    margin: 1rem 0 0 15vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .contacts_wrapper {
+    width: 90vw;
+    margin-top: 1rem;
+    margin-left: 5vw;
+  }
+}
+
+/* ---------------------------------------------------- 404 */
+
+.body_notf {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
