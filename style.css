@@ -16,6 +16,7 @@ html {
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -25,6 +26,7 @@ body {
     overflow-y: scroll;
     transform-style: preserve-3d;
     perspective: 1px;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -58,6 +60,48 @@ header p {
 header img {
     display: inline-block;
     height: 3rem;
+}
+
+.arrow {
+    display: none;
+    height: 3.5rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 5rem;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.arrow:hover {
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+    perspective: 1000px;
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-2px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(2px, 0, 0);
+    }
 }
 
 
@@ -97,6 +141,10 @@ header img {
     font-size: 2rem;
     letter-spacing: .125rem;
     text-align: unset;
+}
+
+ul {
+    white-space: nowrap;
 }
 
 li {
@@ -225,11 +273,12 @@ li span {
         padding: 0 0.75rem;
     }
 
+
     header h1 {
         line-height: 5rem;
         padding-top: 2rem;
         padding-bottom: 1rem;
-        font-size: 5rem;
+        font-size: 4rem;
     }
 
     header p {
@@ -265,19 +314,23 @@ li span {
 
     header {
         padding: 1.5rem;
-        height: 15rem;
+        height: 100vh;
     }
+
+    .header_radek {
+        margin-top: 2rem;
+    }
+
+    .arrow {
+        display: block;
+    }
+
 
     header h1 {
         line-height: 3.5rem;
-        padding-top: 1.5rem;
+        padding-top: 1rem;
         padding-bottom: 1rem;
         font-size: 3rem;
-    }
-
-    header p {
-        line-height: 1.7rem;
-        font-size: 1rem;
     }
 }
 
@@ -313,21 +366,14 @@ li span {
         padding: 0 0.0rem;
     }
 
-    header {
-        padding: 1.5rem;
-        height: 15rem;
+    .countdown_container {
+        transform: scale(0.8);
     }
 
-    header h1 {
-        line-height: 2.5rem;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        font-size: 2rem;
-    }
 
     header p {
-        line-height: 1.2rem;
-        font-size: 1rem;
+        line-height: 1.5rem;
+        font-size: 1.3rem;
     }
 
     .rocnik:nth-child(even)::before {
@@ -368,10 +414,8 @@ li span {
         padding: 0 0.0rem;
     }
 
-    header {
-        padding: 1rem;
-        height: 15rem;
-        background-size: 60%;
+    .header_radek {
+        flex-direction: column-reverse;
     }
 
     header h1 {
@@ -382,8 +426,8 @@ li span {
     }
 
     header p {
-        line-height: 1.2rem;
-        font-size: 0.8rem;
+        line-height: 1.7rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -418,5 +462,10 @@ li span {
     .i_website {
         height: 2rem;
         padding: 0 0.0rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+        line-height: 1.5rem;
     }
 }
