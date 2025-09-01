@@ -531,5 +531,6 @@ li span {
 @media screen and (max-height: 700px) and (max-width: 450px) {
     .countdown_container {
         opacity: 0;
+        height: 0;
     }
 }
