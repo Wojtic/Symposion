@@ -313,7 +313,7 @@ li span {
 
     header {
         padding: 1.5rem;
-        height: 100vh;
+        height: 100%;
     }
 
     .header_radek {
@@ -502,5 +502,34 @@ li span {
 @media screen and (max-width: 400px) {
     .countdown_container {
         transform: scale(0.5);
+    }
+
+    .ikonky {
+        width: 95vw;
+    }
+
+    .rocnik {
+        height: 14rem;
+    }
+
+    .web {
+        padding-left: 0.3rem;
+        padding-right: 0.3rem;
+    }
+
+    .web h2 {
+        line-height: 4rem;
+        font-size: 5vw;
+    }
+
+    .i_website {
+        height: 7vw;
+        padding: 0 0.0rem;
+    }
+}
+
+@media screen and (max-height: 700px) and (max-width: 450px) {
+    .countdown_container {
+        opacity: 0;
     }
 }
