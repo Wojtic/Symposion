@@ -14,13 +14,13 @@
 
 html {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
     scroll-behavior: smooth;
 }
 
 body {
-    height: 100vh;
+    height: 100%;
     /*scroll-snap-type: y proximity;*/
     overflow-x: hidden;
     overflow-y: scroll;
