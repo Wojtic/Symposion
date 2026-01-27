@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <script src="main.js"></script>
+    <script src="fish.js"></script>
+    <title>Proudy – Symposion GJK</title>
+
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Racing+Sans+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <img src="./media/banner_dodat.png" alt="Proudy" />
+    </header>
+
+    <nav>
+      <img class="cara" src="./media/cara.png" alt="" />
+      <img class="cara" src="./media/cara.png" alt="" />
+
+      <div id="links">
+        <a href="#o-akci">O AKCI</a>
+        <a href="#harmonogram">HARMONOGRAM</a>
+        <a href="#kontakty">KONTAKTY</a>
+      </div>
+
+      <img class="cara" src="./media/cara.png" alt="" />
+      <img class="cara" src="./media/cara.png" alt="" />
+    </nav>
+
+    <main id="content">
+      <section id="sec_o-akci">
+        <div class="anchor" id="o-akci"></div>
+        <h2>Symposion Gymnázia Jana Keplera - 17. a 18. listopadu</h2>
+        <img class="cara" src="./media/cara.png" alt="" />
+
+        <p>
+          Zveme všechny příznivce vědění a poznání k podívané a poslechu, které
+          vyzývají k hledání paralel a provokují diskuzi. Toužíte-li po zasazení
+          informací do kontextu a po propojení známého s neznámým, navštivte
+          přednášky, které vám letos Symposion prostřednictvím svých skvělých
+          hostů nabídne. Můžete se vydat po hlavním proudu s trendy a pokrokem,
+          odbočit k vedlejším proudům a meandrům, anebo se obrátit zcela proti
+          proudu a konvencím.
+        </p>
+        <p>
+          Symposion se tradičně koná v listopadu při oslavách Dne studentstva
+          přímo u nás na gymnáziu. Vítáni jsou všichni a vstup je volný. Během
+          dvou dnů probíhají bloky různorodých přednášek doprovázených například
+          koncertem studentských kapel, výstavami, promítáním filmů či
+          interaktivními workshopy.
+        </p>
+        <p>
+          Ve škole v tyto dny nechybí ani kavárna a šatna. Součástí doprovodného
+          programu je také koncert školních kapel, na který Vás srdečně zveme.
+          Naši hudebníci se na Vás budou těšit 15.11. v Chapeau Rouge!
+        </p>
+      </section>
+
+      <section id="sec_harmonogram">
+        <div class="anchor" id="harmonogram"></div>
+        <h2>Harmonogram</h2>
+        <img class="cara" src="./media/cara.png" alt="" />
+        <div id="harmonogram_days"></div>
+      </section>
+
+      <section id="sec_kontakty">
+        <div class="anchor" id="kontakty"></div>
+        <h2>Kontakty</h2>
+        <img class="cara" src="./media/cara.png" alt="" />
+        <div id="kontakty_horizontal">
+          <div id="kontakty_vertical">
+            <p><b>Jak se k nám dostanete?</b></p>
+            <p>
+              Přes mocný proud Vltavy na levý břeh, dále po proudu turistů
+              Nerudovou ulicí, případně hromadnou dopravou do zastávek Pohořelec
+              nebo Park Maxe van der Stoela. A odtamtud je to už jen kousek k
+              nám na adresu Parléřova 2, 169 00, Praha 6.
+            </p>
+            <div class="socials">
+              <a href="https://www.instagram.com/symposion_gjk/"
+                ><img src="./media/instagram.png"
+              /></a>
+              <a href="https://fb.me/SymposionGjk"
+                ><img src="./media/facebook.png"
+              /></a>
+              <a href="mailto:symposion@gjk.cz"
+                ><img src="./media/mail.png"
+              /></a>
+              <a href="#"
+                ><img src="./media/praha.png"
+              /></a>
+            </div>
+          </div>
+          <div id="map">
+            <div id="map_border"></div>
+            <iframe
+              src="https://www.openstreetmap.org/export/embed.html?bbox=14.383107125759125%2C50.086795202407714%2C14.391553401947023%2C50.08897390871892&amp;layer=mapnik&amp;marker=50.087884567943426%2C14.387330263853073"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+      <section>
+        <p>
+          Design webu vytvořila Ester Dolejšová a rozproudili ho Vojtěch Černý a
+          Vít Hromas.
+        </p>
+        <br />
+        <br />
+      </section>
+    </main>
+
+    <div id="overlay">
+      <img class="voda_gif" src="./media/voda_pomala.gif" alt="" width="100%" />
+      <div id="overlay_content">
+        <div id="fish_container"></div>
+        <div id="intro">
+          <div id="jako_text">
+            <p>Proud jako tah, dráha</p>
+            <p>Proud jako cesta, proces</p>
+            <p>Proud jako síla, živel, vlna</p>
+            <p>Proud jako směr, trend</p>
+            <p>Proud jako vývoj a nekonečný pokrok</p>
+            <p>Proud jako kontinuita</p>
+          </div>
+        </div>
+        <div id="popup">
+          <div id="popup_header">
+            <h2 id="popup_presenter"></h2>
+            <div id="popup_horizontal">
+              <p id="popup_room"></p>
+              <p id="popup_time"></p>
+            </div>
+          </div>
+          <div id="popup_close">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="100%"
+              height="100%"
+              viewBox="0 0 24 24"
+              fill="white"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-x"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </div>
+          <div id="popup_content">
+            <h3 id="popup_title"></h3>
+            <p id="popup_annotation"></p>
+            <p id="popup_profile"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

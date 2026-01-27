@@ -1,0 +1,548 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-bg-color: #fff1b5;
+  --main-text-color: #001b4a;
+  --nav-text-color: #001b4a;
+  --water-color: #00023d;
+  --overlay-text-color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+
+  overflow: hidden;
+  overflow-x: hidden;
+}
+
+.anchor {
+  display: block;
+  position: relative;
+  top: calc(-1 * clamp(1rem, calc(3vw + 0.1rem), 4rem) - 1em - 2 * min(10px, 1vw));
+  visibility: hidden;
+}
+
+header {
+  text-align: center;
+  padding: 1em 0;
+}
+
+header img {
+  width: clamp(0px, 90vw, 60rem);
+}
+
+img {
+  pointer-events: none;
+  user-select: none;
+}
+
+nav {
+  background-color: var(--main-bg-color);
+  position: sticky;
+  top: calc(-2 * min(10px, 1vw) - 0.5em);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 0.5em;
+  z-index: 5;
+}
+
+nav #links {
+  display: flex;
+  justify-content: center;
+}
+
+nav #links a {
+  flex-grow: 1;
+  text-decoration: none;
+  color: var(--nav-text-color);
+  font-size: clamp(1rem, calc(3vw + 0.1rem), 4rem);
+  line-height: clamp(1rem, calc(3vw + 0.1rem), 4rem);
+
+  display: inline-block;
+  padding: 0.2em 0.2em 0.1em 0.2em;
+  text-align: center;
+}
+
+nav .cara {
+  height: min(10px, 1vw);
+  width: 100vw;
+}
+
+section .cara {
+  height: min(10px, 1vw);
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 7vw + 1rem, 5rem);
+  margin: 0.2em 0;
+}
+
+main {
+  min-height: 70vh;
+  padding: calc(min(10px, 1vw) + 0.5em) 0;
+  overflow-y: auto;
+}
+
+section h2 {
+  margin-top: 1rem;
+
+  font-size: clamp(1.3rem, 1.35vw + 1rem, 3rem);
+
+  /*border-bottom: 2px solid var(--main-text-color);*/
+}
+
+section {
+  color: var(--main-text-color);
+  width: calc(clamp(0px, 90vw, 70rem));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#sec_kontakty {
+  min-height: 100vh;
+}
+
+#kontakty_horizontal {
+  display: flex;
+  gap: 4em;
+}
+
+#kontakty_vertical {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+}
+
+.socials a {
+  display: inline-block;
+  margin-right: 2rem;
+  transition: all 0.5s ease;
+}
+
+.socials a:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.socials img {
+  width: min(5rem, 14vw);
+}
+
+#map {
+  position: relative;
+  width: 50%;
+  aspect-ratio: calc(16 / 9);
+}
+
+#map_border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-style: solid;
+  border-width: 40px;
+  border-color: rgba(0, 0, 0, 0.01);
+  border-image-source: url("./media/border.png");
+  border-image-slice: 54 65 65 65;
+  border-image-width: min(35px, 5vw) min(40px, 6vw);
+  /*border-image-width: 35px 40px;*/
+  z-index: 1;
+  pointer-events: none;
+}
+
+iframe {
+  position: absolute;
+  width: calc(100% - calc(0.6 * min(40px, 6vw)));
+  height: calc(100% - calc(0.5 * min(35px, 5vw)));
+  margin-left: calc(0.6 * min(40px, 6vw));
+  margin-top: calc(0.5 * min(35px, 5vw));
+  z-index: 0;
+}
+
+section p {
+  /*font-size: clamp(1rem, 1.5vw + 0.5rem, 2rem);*/
+  font-size: min(1.3rem, 4vw);
+  line-height: 1.4em;
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+#overlay {
+  color: var(--overlay-text-color);
+
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transition: top 0.1s;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#overlay .voda_gif {
+  margin-bottom: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transform-origin: bottom;
+  transition: transform 0.5s;
+}
+
+#overlay_content {
+  margin-top: 0;
+  padding-top: 10px;
+  height: 100%;
+  background-color: var(--water-color);
+  position: relative;
+}
+
+#intro {
+  z-index: 1;
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#fish_container {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.fish {
+  position: absolute;
+  pointer-events: none;
+}
+
+@media (orientation: portrait) {
+  #jako_text {
+    margin-top: calc(clamp(0px, 20vh, 60rem) * 0.2);
+  }
+}
+
+#jako_text {
+  font-family: "Zalando Sans Expanded", sans-serif;
+  font-weight: 500;
+  margin: 0 auto;
+  font-size: clamp(16px, 4vw + 1.6px, 48px);
+  text-align: left;
+  text-transform: uppercase;
+}
+
+@media (orientation: landscape) {
+  #jako_text {
+    font-size: clamp(calc(100vh * 16/910), calc(4vw + 100vh * 1.6/910), calc(100vh * 48/910));
+  }
+}
+
+#jako_text p {
+  width: max-content;
+  min-width: 100%;
+  padding: 0.2em 0.5em;
+  text-wrap: nowrap;
+  white-space: nowrap;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (orientation: portrait) {
+  #overlay {
+    top: calc(clamp(0px, 90vw, 60rem) * 0.6);
+  }
+
+  #fish_container {
+    height: calc(100vh - (clamp(0px, 90vw, 60rem) * 0.6));
+  }
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+#harmonogram_days {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.lunch_row,
+.lunch_row td {
+  height: auto !important;
+  padding-bottom: 0.7rem !important;
+}
+
+
+#harmonogram_days h3 {
+  font-size: clamp(1.2rem, 1.5vw + 0.5rem, 2.5rem);
+  margin-bottom: 0.5em;
+}
+
+.day_table {
+  z-index: 2;
+}
+
+#harmonogram_days table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+#harmonogram_days th,
+#harmonogram_days td {
+  text-align: center;
+  vertical-align: top;
+  width: calc((100% - 4em) / 6);
+}
+
+@media screen and (min-width: 901px) {
+  #harmonogram_days td:not(:nth-child(1)) {
+    height: 10rem;
+    padding: 0.5rem;
+  }
+
+  #harmonogram_days td:nth-child(1) {
+    padding-top: 0.5rem;
+  }
+
+  #harmonogram_days tr:not(:last-child) {
+    border-bottom: dashed 2px var(--water-color);
+  }
+
+  #harmonogram_days th:not(:nth-child(1)),
+  #harmonogram_days td:not(:nth-child(1)) {
+    border-right: dashed 2px var(--water-color);
+    border-left: dashed 2px var(--water-color);
+  }
+
+  #harmonogram_days th:last-child,
+  #harmonogram_days td:last-child {
+    border-right: none;
+  }
+}
+
+#harmonogram_days p {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+#harmonogram_days .presenter {
+  font-weight: 600;
+  font-size: min(1.1rem, 5vw);
+}
+
+#harmonogram_days .lecture {
+  font-size: min(1rem, 4vw);
+}
+
+#harmonogram_days th {
+  font-size: x-large;
+}
+
+#harmonogram_days th:nth-child(1),
+#harmonogram_days td:nth-child(1) {
+  font-size: x-large;
+  width: 4em;
+}
+
+@media screen and (max-width: 900px) {
+  #harmonogram_days tr {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  #harmonogram_days td:nth-child(1) {
+    border-bottom: 2px solid var(--main-text-color);
+    margin-top: 2rem;
+    font-size: min(large, 7vw);
+  }
+
+  #harmonogram_days tr:nth-child(2) td:nth-child(1) {
+    margin-top: 0;
+  }
+
+  .empty {
+    display: none;
+  }
+
+  #harmonogram_days td {
+    width: 100%;
+  }
+
+  #harmonogram_days table tr:first-child {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #kontakty_horizontal {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #kontakty_vertical {
+    max-width: 100% !important;
+  }
+
+  #map {
+    width: min(100%, 30rem);
+  }
+}
+
+#popup {
+  /* text still get outside of the bottom of the screen*/
+  margin-left: clamp(0.25em, 4vw + 0.25em, 1.5em);
+  margin-right: clamp(0.25em, 4vw + 0.25em, 1.5em);
+  text-align: justify;
+  margin-bottom: clamp(0.25rem, 4vw + 0.25em, 0.5em);
+}
+
+#popup_horizontal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+#popup h3 {
+  margin-bottom: 0.5rem;
+}
+
+#popup_profile {
+  color: lightgray;
+  margin-top: 0.5rem;
+}
+
+#popup {
+  width: calc(clamp(0px, 90vw, 70rem));
+  font-size: min(1.3rem, 4vw);
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+}
+
+
+#popup_close {
+  position: absolute;
+  top: 2vh;
+  right: 5vw;
+  right: calc((100vw - clamp(0px, 90vw, 70rem))/2);
+  width: 8vw;
+  max-width: 55px;
+  height: 8vw;
+  max-height: 55px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+
+  background: transparent;
+  font-size: 1.8rem;
+
+}
+
+#popup_close:hover {
+  animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+
+}
+
+
+@keyframes shake {
+
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+#popup_content {
+  overflow-y: scroll;
+}
+
+@media screen and (min-width: 1000px) {
+  section {
+    width: calc(clamp(0px, 60vw, 70rem));
+  }
+
+  header img {
+    width: calc(clamp(0px, 60vw, 60rem));
+  }
+
+  section p,
+  #popup {
+    font-size: calc(clamp(1rem, 1vw + 0.3rem, 1.3rem));
+  }
+
+  #harmonogram_days .lecture {
+    font-size: calc(clamp(0.8rem, 0.5vw + 0.4rem, 1rem));
+  }
+
+  #harmonogram_days .presenter {
+    font-size: calc(clamp(0.9rem, 0.55vw + 0.44rem, 1rem));
+  }
+
+  #harmonogram_days th,
+  #harmonogram_days th:nth-child(1),
+  #harmonogram_days td:nth-child(1) {
+    font-size: clamp(1.1rem, 1.2vw + 0.3rem, 1.7rem);
+  }
+
+}

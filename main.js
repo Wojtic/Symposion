@@ -1,4 +1,4 @@
-const datum = "2025-11-17 12:00";
+const datum = (new Date).getFullYear()+"-11-17 12:00";
 (function () {
   const second = 1000,
     minute = second * 60,
