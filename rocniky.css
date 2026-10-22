@@ -1,3 +1,7 @@
+#sklo::before {
+    background-image: url("./2026/pozadi.png");
+}
+
 #proudy::before {
     background-image: url("./2025/pozadi.jpg");
 }
